@@ -138,7 +138,6 @@ ln -sf ../src include/p2c
 %build
 cp -f src/sys.p2crc src/p2crc
 %{__make} RPM_OPTS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
-#%{__make} RPM_OPTS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}" shlib -C src
 %{__make} RPM_OPTS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}" basic -C examples
 
 %install
