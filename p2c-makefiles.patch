@@ -22,7 +22,7 @@ diff -Nur p2c-1.22.orig/examples/Makefile p2c-1.22/examples/Makefile
 -P2C = ../p2c
 -INC = ../home
 -LIB = ../home/libp2c.a
-+P2C = ../src/p2c
++P2C = ../src/p2c -H ../src
 +INC = ../src/
 +LIB = ../src/libp2c.a
  

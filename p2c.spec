@@ -1,17 +1,21 @@
 Summary:	Shared library for programs build with p2c Pascal to C convertor
 Summary(de):	Gemeinsam genutzte Library für Programme, die mit dem Pascal-C-Konverter p2c erstellt wurden
 Summary(fr):	Librairie partagée pour les programmes construits avec le convertisseur Pascal vers C p2c
-Summary(pl):	biblioteka dzielona dla programów skompilowanych po u¿yciu konwertera Pascala do C
+Summary(pl):	Biblioteka dzielona dla programów skompilowanych po u¿yciu konwertera Pascala do C
 Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplıklar
 Name:		p2c
 Version:	1.22
-Release:	9
+Release:	10
 License:	Distributable
 Group:		Libraries
 Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://csvax.cs.caltech.edu/pub/%{name}-%{version}.tar.gz
+Group(pt_BR):	Bibliotecas
+Group(ru):	âÉÂÌÉÏÔÅËÉ
+Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
+Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefiles.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -78,8 +82,12 @@ Summary:	Pascal to C translator static library
 Summary(pl):	Biblioteka statyczna translatora Pascala na C
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
+Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
