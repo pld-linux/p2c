@@ -64,7 +64,7 @@ p2c - це транслятор з Pascal в C. В╕н використову╓ться для трансляц╕╖
 в╕дкомп╕льован╕ стандартним компилятором C (наприклад, gcc).
 
 %package devel
-Summary:	programs and header for Pascal to C translator
+Summary:	Programs and header for Pascal to C translator
 Summary(de):	Programme und Header fЭr den Pascal-C-эbersetzer
 Summary(es):	Programas y archivos de inclusiСn para el traductor de Pascal a C
 Summary(fr):	Programmes et en-tЙte pour le convertisseur Pascal vers C
