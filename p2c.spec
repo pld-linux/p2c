@@ -215,7 +215,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc ChangeLog README src/{HISTORY,NOTES} examples/basic.doc
+%doc ChangeLog README src/{HISTORY,NOTES}
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/p2c
 
@@ -225,5 +225,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n basic
 %defattr(644,root,root,755)
-%doc examples/*.gz
+%doc examples/basic.doc
 %attr(755,root,root) %{_bindir}/basic
