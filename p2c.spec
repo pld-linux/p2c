@@ -153,24 +153,24 @@ rm -rf $RPM_BUILD_ROOT
 %postun -p /sbin/ldconfig
 
 %files
-%defattr(644, root, root, 755)
-%attr(755, root, root) %{_bindir}/p2c
-%attr(755, root, root) %{_libdir}/lib*.so.*.*
-%attr(755, root, root) %{_libdir}/p2c
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/p2c
+%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/p2c
 %{_mandir}/man1/*
 
 %files devel
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %{_includedir}/p2c
 %{_libdir}/lib*.so
 
 %files static
-%attr(644, root, root) %{_libdir}/lib*.a
+%attr(644,root,root) %{_libdir}/lib*.a
 
 %files -n basic
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc examples/basic.doc
-%attr(755, root, root) %{_bindir}/basic
+%attr(755,root,root) %{_bindir}/basic
 
 %changelog
 * Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
