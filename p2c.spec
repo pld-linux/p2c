@@ -9,7 +9,7 @@ Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplıklar
 Summary(uk):	ëÏÎ×ÅÒÔÏÒ Ú Pascal × C
 Name:		p2c
 Version:	1.22
-Release:	12
+Release:	13
 License:	distributable
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.gz
