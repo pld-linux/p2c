@@ -47,7 +47,7 @@ kompilatorem C (np. gcc).
 O p2c И um tradutor de Pascal para C. Ele И usado para converter o
 cСdigo fonte Pascal em cСdigo fonte C, entЦo este pode ser compilado
 usando-se um compilador C padrЦo (como gcc).
- 
+
 %description -l ru
 p2c - это транслятор из Pascal в C. Он используется для трансляции
 исходных текстов на Pascal в исходные тексты на C, которые могут
@@ -141,7 +141,7 @@ Bibliotecas estАticas para desenvolvimento com p2c.
 %description static -l uk
 Пакет p2c-devel м╕стить статичн╕ б╕бл╕отеки, необх╕дн╕ для розробки
 транслятора з Pascal в C, p2c.
- 
+
 %package -n basic
 Summary:	BASIC interpretor
 Summary(de):	BASIC-Interpreter
