@@ -12,7 +12,7 @@ Source:      ftp://csvax.cs.caltech.edu/pub/%{name}-%{version}.tar.Z
 Patch0:      p2c-misc.patch
 Patch1:      p2c-buildroot.patch
 Patch2:      p2c-Makefile.patch
-BuildRoot:   /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 p2c is the Pascal to C translation system.  It is used to convert
