@@ -9,11 +9,12 @@ Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplýklar
 Summary(uk):	ëÏÎ×ÅÒÔÏÒ Ú Pascal × C
 Name:		p2c
 Version:	1.22
-Release:	11
+Release:	12
 License:	distributable
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefiles.patch
+Patch1:		%{name}-dos.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -182,6 +183,7 @@ dildir. Aslýnda o iþe yaradýðý bile söylenemez. :-)
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 install -d src/shlib include
 ln -sf ../src include/p2c
 
