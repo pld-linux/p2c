@@ -6,7 +6,7 @@ Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplýklar
 Name:		p2c
 Version:	1.22
 Release:	10
-License:	Distributable
+License:	distributable
 Group:		Libraries
 Group(de):	Libraries
 Group(es):	Bibliotecas
