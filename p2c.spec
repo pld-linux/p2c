@@ -4,16 +4,15 @@ Summary(fr):	Librairie partagée pour les programmes construits avec le convertis
 Summary(pl):	biblioteka dzielona dla programów skompilowanych po u¿yciu konwertera Pascala do C
 Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplýklar
 Name:		p2c
-Version:	1.20
-Release:	11
+Version:	1.22
+Release:	5
 Copyright:	distributable
 Group:		Libraries
+Group(de):	Libraries
 Group(fr):	Librairies
 Group(pl):	Biblioteki
-Source0:	ftp://csvax.cs.caltech.edu/pub/%{name}-%{version}.tar.Z
-Patch0:		p2c-misc.patch
-Patch1:		p2c-buildroot.patch
-Patch2:		p2c-Makefile.patch
+Source0:	ftp://csvax.cs.caltech.edu/pub/%{name}-%{version}.tar.gz
+Patch0:		%{name}-makefiles.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -48,6 +47,7 @@ Summary(fr):	Programmes et en-tête pour le convertisseur Pascal vers C
 Summary(pl):	Programy i pliki nag³ówkowe dla translatora Pascala na C
 Summary(tr):	Pascal-C çeviricisi için programlar ve baþlýk dosyalarý
 Group:		Development/Languages
+Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
@@ -77,6 +77,7 @@ Bu paket, Pascal'dan C'ye çevirici için geliþtirme dosyalarýný içerir.
 Summary:	Pascal to C translator static library
 Summary(pl):	Biblioteka statyczna translatora Pascala na C
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Requires:	%{name}-devel = %{version}
@@ -94,6 +95,7 @@ Summary(fr):	Interpréteur BASIC
 Summary(pl):	Interpreter BASICa
 Summary(tr):	BASIC yorumlayýcýsý
 Group:		Development/Languages
+Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 
 %description -n basic
@@ -128,31 +130,32 @@ programlamanýn temellerinin öðrenilmesinde kullanýlan tarih öncesi bir
 dildir. Aslýnda o iþe yaradýðý bile söylenemez. :-)
 
 %prep
-%setup -c -q
+%setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-mkdir src/shlib
+install -d src/shlib include
+ln -sf ../src include/p2c
 
 %build
-cp src/sys.p2crc src/p2crc
-%{__make}
-%{__make} shlib -C src
+cp -f src/sys.p2crc src/p2crc
+%{__make} RPM_OPTS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}"
+#%{__make} RPM_OPTS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}" shlib -C src
+%{__make} RPM_OPTS="%{?debug:-O -g}%{!?debug:$RPM_OPT_FLAGS}" basic -C examples
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
-	INCDIR=$RPM_BUILD_ROOT%{_includedir}/p2c \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	LIBDIR=$RPM_BUILD_ROOT%{_libdir} \
-	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
+install -d $RPM_BUILD_ROOT{%{_libdir},%{_mandir}/man1,%{_includedir},%{_bindir}}
+%{__make} install RPM_INSTALL=$RPM_BUILD_ROOT
+ln -sf libp2c.so.1.2.0 $RPM_BUILD_ROOT%{_libdir}/libp2c.so
 
-install -s examples/basic $RPM_BUILD_ROOT%{_bindir}/basic
+#	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
+#	INCDIR=$RPM_BUILD_ROOT%{_includedir}/p2c \
+#	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
+#	LIBDIR=$RPM_BUILD_ROOT%{_libdir} \
+#	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
-strip $RPM_BUILD_ROOT%{_prefix}/{bin/p2c,lib/lib*.so.*.*}
+install examples/basic $RPM_BUILD_ROOT%{_bindir}/basic
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf ChangeLog README src/{HISTORY,NOTES} examples/basic.doc
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -164,8 +167,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/p2c
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
-%attr(755,root,root) %{_libdir}/p2c
+%{_libdir}/p2c
 %{_mandir}/man1/*
+%doc {ChangeLog,README}.gz src/{HISTORY,NOTES}.gz
 
 %files devel
 %defattr(644,root,root,755)
@@ -178,5 +182,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n basic
 %defattr(644,root,root,755)
-%doc examples/basic.doc
+%doc examples/basic.doc.gz
 %attr(755,root,root) %{_bindir}/basic
