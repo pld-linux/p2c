@@ -138,13 +138,13 @@ make install \
 	INCDIR=$RPM_BUILD_ROOT/usr/include/p2c \
 	BINDIR=$RPM_BUILD_ROOT/usr/bin \
 	LIBDIR=$RPM_BUILD_ROOT/usr/lib \
-	MANDIR=$RPM_BUILD_ROOT/usr/man/man1
+	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
 install -s examples/basic $RPM_BUILD_ROOT/usr/bin/basic
 
 strip $RPM_BUILD_ROOT/usr/{bin/p2c,lib/lib*.so.*.*}
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -157,7 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755, root, root) /usr/bin/p2c
 %attr(755, root, root) /usr/lib/lib*.so.*.*
 %attr(755, root, root) /usr/lib/p2c
-%attr(644, root,  man) /usr/man/man1/*
+%attr(644, root,  man) %{_mandir}/man1/*
 
 %files devel
 %defattr(644, root, root, 755)
