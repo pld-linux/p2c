@@ -6,7 +6,7 @@ Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplýklar
 Name:		p2c
 Version:	1.22
 Release:	5
-Copyright:	distributable
+License:	Distributable
 Group:		Libraries
 Group(de):	Libraries
 Group(fr):	Librairies
@@ -144,15 +144,10 @@ cp -f src/sys.p2crc src/p2crc
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_mandir}/man1,%{_includedir},%{_bindir}}
+
 %{__make} install RPM_INSTALL=$RPM_BUILD_ROOT
+
 ln -sf libp2c.so.1.2.0 $RPM_BUILD_ROOT%{_libdir}/libp2c.so
-
-#	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
-#	INCDIR=$RPM_BUILD_ROOT%{_includedir}/p2c \
-#	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-#	LIBDIR=$RPM_BUILD_ROOT%{_libdir} \
-#	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
-
 install examples/basic $RPM_BUILD_ROOT%{_bindir}/basic
 
 gzip -9nf ChangeLog README src/{HISTORY,NOTES} examples/basic.doc
@@ -169,12 +164,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 %{_libdir}/p2c
 %{_mandir}/man1/*
-%doc {ChangeLog,README}.gz src/{HISTORY,NOTES}.gz
 
 %files devel
 %defattr(644,root,root,755)
+%doc *.gz src/*.gz
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/p2c
-%{_libdir}/lib*.so
 
 %files static
 %defattr(644,root,root,755)
@@ -182,5 +177,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n basic
 %defattr(644,root,root,755)
-%doc examples/basic.doc.gz
+%doc examples/*.gz
 %attr(755,root,root) %{_bindir}/basic
