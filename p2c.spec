@@ -5,7 +5,7 @@ Summary(pl):	biblioteka dzielona dla programów skompilowanych po u¿yciu konwerte
 Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplýklar
 Name:		p2c
 Version:	1.22
-Release:	5
+Release:	9
 License:	Distributable
 Group:		Libraries
 Group(de):	Libraries
@@ -138,7 +138,8 @@ ln -sf ../src include/p2c
 %build
 cp -f src/sys.p2crc src/p2crc
 %{__make} RPM_OPTS="%{rpmcflags}"
-%{__make} RPM_OPTS="%{rpmcflags}" basic -C examples
+ln -sf src p2c
+%{__make} RPM_OPTS="%{rpmcflags} -I.." basic -C examples
 
 %install
 rm -rf $RPM_BUILD_ROOT
