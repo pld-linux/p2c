@@ -177,7 +177,7 @@ rm -rf $RPM_BUILD_ROOT
   [1.20-11]
 - added gzipping man pages,
 - added p2c-Makefile.patch,
-- added striping shared libraries.
+- added stripping shared libraries.
 
 * Sat Sep 26 1998 Marcin 'Qrczak' Kowalczyk <qrczak@knm.org.pl>
 - use %{name} and %{version} macros,
