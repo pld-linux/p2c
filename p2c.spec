@@ -137,11 +137,11 @@ mkdir src/shlib
 %build
 cp src/sys.p2crc src/p2crc
 make
-make shlib -C src
+%{__make} shlib -C src
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install \
+%{__make} install \
 	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
 	INCDIR=$RPM_BUILD_ROOT%{_includedir}/p2c \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
