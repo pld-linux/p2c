@@ -175,7 +175,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.20-11]
-- added gziping man pages,
+- added gzipping man pages,
 - added p2c-Makefile.patch,
 - added striping shared libraries.
 
