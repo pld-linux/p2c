@@ -42,9 +42,9 @@ p2c to system tЁumaczenia Pascala na C. Konwertuje ╪rСdЁo w Pascalu na
 kompilatorem C (np. gcc).
 
 %description -l pt_BR
-O p2c И um tradutor de Pascal para C. Ele И usado para converter o cСdigo fonte
-Pascal em cСdigo fonte C, entЦo este pode ser compilado usando-se um compilador
-C padrЦo (como gcc).
+O p2c И um tradutor de Pascal para C. Ele И usado para converter o
+cСdigo fonte Pascal em cСdigo fonte C, entЦo este pode ser compilado
+usando-se um compilador C padrЦo (como gcc).
  
 %description -l ru
 p2c - это транслятор из Pascal в C. Он используется для трансляции
@@ -99,9 +99,9 @@ Translator Pascala na C. Ten pakiet zawiera program translatora i
 pliki nagЁСwkowe.
 
 %description devel -l pt_BR
-Este И o kit de desenvolvimento para o tradutor de Pascal para C. ContИm os
-arquivos de inclusЦo e alguns programas que podem ser Зteis para quem usa o
-tradutor.
+Este И o kit de desenvolvimento para o tradutor de Pascal para C.
+ContИm os arquivos de inclusЦo e alguns programas que podem ser Зteis
+para quem usa o tradutor.
 
 %description devel -l ru
 Пакет p2c-devel содержит файлы, необходимые для разработки транслятора
@@ -114,10 +114,8 @@ Bu paket, Pascal'dan C'ye Гevirici iГin geliЧtirme dosyalarЩnЩ iГerir.
 Пакет p2c-devel м╕стить файли, необх╕дн╕ для розробки транслятора
 з Pascal в C, p2c.
 
-
 %package static
 Summary:	Pascal to C translator static library
-Summary(es):	Static libraries for p2c development
 Summary(pl):	Biblioteka statyczna translatora Pascala na C
 Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com p2c
 Summary(ru):	Статические библиотеки для разработки p2c, транслятора из Pascal в C
@@ -128,14 +126,11 @@ Requires:	%{name}-devel = %{version}
 %description static
 Pascal to C translator static library.
 
-%description static -l es
-Static libraries for p2c development
-
 %description static -l pl
 Biblioteka statyczna translatora Pascala na C.
 
 %description static -l pt_BR
-Bibliotecas estАticas para desenvolvimento com p2c
+Bibliotecas estАticas para desenvolvimento com p2c.
 
 %description static -l ru
 Пакет p2c-devel содержит статические библиотеки, необходимые для разработки
