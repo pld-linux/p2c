@@ -8,13 +8,6 @@ Version:	1.22
 Release:	10
 License:	distributable
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	âÉÂÌÉÏÔÅËÉ
-Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 Source0:	%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefiles.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,8 +44,6 @@ Summary(fr):	Programmes et en-tête pour le convertisseur Pascal vers C
 Summary(pl):	Programy i pliki nag³ówkowe dla translatora Pascala na C
 Summary(tr):	Pascal-C çeviricisi için programlar ve başlık dosyaları
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
 %description devel
@@ -81,13 +72,6 @@ Bu paket, Pascal'dan C'ye çevirici için geliştirme dosyalarını içerir.
 Summary:	Pascal to C translator static library
 Summary(pl):	Biblioteka statyczna translatora Pascala na C
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name}-devel = %{version}
 
 %description static
@@ -103,8 +87,6 @@ Summary(fr):	Interpréteur BASIC
 Summary(pl):	Interpreter BASICa
 Summary(tr):	BASIC yorumlayıcısı
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 
 %description -n basic
 This is a BASIC language interpreter. You can use it to run programs
