@@ -200,8 +200,6 @@ install -d $RPM_BUILD_ROOT{%{_libdir},%{_mandir}/man1,%{_includedir},%{_bindir}}
 ln -sf libp2c.so.1.2.0 $RPM_BUILD_ROOT%{_libdir}/libp2c.so
 install examples/basic $RPM_BUILD_ROOT%{_bindir}/basic
 
-gzip -9nf ChangeLog README src/{HISTORY,NOTES} examples/basic.doc
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -217,7 +215,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz src/*.gz
+%doc ChangeLog README src/{HISTORY,NOTES} examples/basic.doc
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_includedir}/p2c
 
