@@ -135,7 +135,7 @@ make shlib -C src
 rm -rf $RPM_BUILD_ROOT
 make install \
 	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
-	INCDIR=$RPM_BUILD_ROOT/usr/include/p2c \
+	INCDIR=$RPM_BUILD_ROOT%{_includedir}/p2c \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
@@ -161,7 +161,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644, root, root, 755)
-/usr/include/p2c
+%{_includedir}/p2c
 %{_libdir}/lib*.so
 
 %files static
