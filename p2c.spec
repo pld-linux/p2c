@@ -136,11 +136,11 @@ rm -rf $RPM_BUILD_ROOT
 make install \
 	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
 	INCDIR=$RPM_BUILD_ROOT/usr/include/p2c \
-	BINDIR=$RPM_BUILD_ROOT/usr/bin \
+	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	LIBDIR=$RPM_BUILD_ROOT%{_libdir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
-install -s examples/basic $RPM_BUILD_ROOT/usr/bin/basic
+install -s examples/basic $RPM_BUILD_ROOT%{_bindir}/basic
 
 strip $RPM_BUILD_ROOT/usr/{bin/p2c,lib/lib*.so.*.*}
 
@@ -154,7 +154,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644, root, root, 755)
-%attr(755, root, root) /usr/bin/p2c
+%attr(755, root, root) %{_bindir}/p2c
 %attr(755, root, root) %{_libdir}/lib*.so.*.*
 %attr(755, root, root) %{_libdir}/p2c
 %{_mandir}/man1/*
@@ -170,7 +170,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n basic
 %defattr(644, root, root, 755)
 %doc examples/basic.doc
-%attr(755, root, root) /usr/bin/basic
+%attr(755, root, root) %{_bindir}/basic
 
 %changelog
 * Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
