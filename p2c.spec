@@ -137,8 +137,8 @@ ln -sf ../src include/p2c
 
 %build
 cp -f src/sys.p2crc src/p2crc
-%{__make} RPM_OPTS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}"
-%{__make} RPM_OPTS="%{?debug:-O0 -g}%{!?debug:$RPM_OPT_FLAGS}" basic -C examples
+%{__make} RPM_OPTS="%{rpmcflags}"
+%{__make} RPM_OPTS="%{rpmcflags}" basic -C examples
 
 %install
 rm -rf $RPM_BUILD_ROOT
