@@ -9,7 +9,7 @@ Summary(tr):	Pascal'dan C'ye çevirici için ortak kitaplýklar
 Summary(uk):	ëÏÎ×ÅÒÔÏÒ Ú Pascal × C
 Name:		p2c
 Version:	1.22
-Release:	13
+Release:	14
 License:	distributable
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.gz
@@ -190,15 +190,28 @@ ln -sf ../src include/p2c
 
 %build
 cp -f src/sys.p2crc src/p2crc
-%{__make} RPM_OPTS="%{rpmcflags}"
+%{__make} \
+	RPM_OPTS="%{rpmcflags} -fPIC" \
+	LIBDIR="%{_libdir}" \
+	ABSHOMEDIR="%{_libdir}/p2c" \
+	HOMEDIR="%{_libdir}/p2c"
+
 ln -sf src p2c
-%{__make} RPM_OPTS="%{rpmcflags} -I.." basic -C examples
+%{__make} -C examples basic \
+	RPM_OPTS="%{rpmcflags} -fPIC -I.." \
+	LIBDIR="%{_libdir}" \
+	ABSHOMEDIR="%{_libdir}/p2c" \
+	HOMEDIR="$RPM_BUILD_ROOT%{_libdir}/p2c"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_mandir}/man1,%{_includedir},%{_bindir}}
 
-%{__make} install RPM_INSTALL=$RPM_BUILD_ROOT
+%{__make} install \
+	RPM_INSTALL=$RPM_BUILD_ROOT \
+	LIBDIR="$RPM_BUILD_ROOT%{_libdir}" \
+	ABSHOMEDIR="%{_libdir}/p2c" \
+	HOMEDIR="$RPM_BUILD_ROOT%{_libdir}/p2c"
 
 ln -sf libp2c.so.1.2.0 $RPM_BUILD_ROOT%{_libdir}/libp2c.so
 install examples/basic $RPM_BUILD_ROOT%{_bindir}/basic
