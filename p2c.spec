@@ -157,7 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755, root, root) /usr/bin/p2c
 %attr(755, root, root) /usr/lib/lib*.so.*.*
 %attr(755, root, root) /usr/lib/p2c
-%attr(644, root,  man) %{_mandir}/man1/*
+%{_mandir}/man1/*
 
 %files devel
 %defattr(644, root, root, 755)
