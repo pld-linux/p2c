@@ -134,10 +134,10 @@ make shlib -C src
 %install
 rm -rf $RPM_BUILD_ROOT
 make install \
-	HOMEDIR=$RPM_BUILD_ROOT/usr/lib/p2c \
+	HOMEDIR=$RPM_BUILD_ROOT%{_libdir}/p2c \
 	INCDIR=$RPM_BUILD_ROOT/usr/include/p2c \
 	BINDIR=$RPM_BUILD_ROOT/usr/bin \
-	LIBDIR=$RPM_BUILD_ROOT/usr/lib \
+	LIBDIR=$RPM_BUILD_ROOT%{_libdir} \
 	MANDIR=$RPM_BUILD_ROOT%{_mandir}/man1
 
 install -s examples/basic $RPM_BUILD_ROOT/usr/bin/basic
@@ -155,17 +155,17 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644, root, root, 755)
 %attr(755, root, root) /usr/bin/p2c
-%attr(755, root, root) /usr/lib/lib*.so.*.*
-%attr(755, root, root) /usr/lib/p2c
+%attr(755, root, root) %{_libdir}/lib*.so.*.*
+%attr(755, root, root) %{_libdir}/p2c
 %{_mandir}/man1/*
 
 %files devel
 %defattr(644, root, root, 755)
 /usr/include/p2c
-/usr/lib/lib*.so
+%{_libdir}/lib*.so
 
 %files static
-%attr(644, root, root) /usr/lib/lib*.a
+%attr(644, root, root) %{_libdir}/lib*.a
 
 %files -n basic
 %defattr(644, root, root, 755)
