@@ -171,28 +171,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc examples/basic.doc
 %attr(755,root,root) %{_bindir}/basic
-
-%changelog
-* Sun Nov 29 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [1.20-11]
-- added gzipping man pages,
-- added p2c-Makefile.patch,
-- added stripping shared libraries.
-
-* Sat Sep 26 1998 Marcin 'Qrczak' Kowalczyk <qrczak@knm.org.pl>
-- use %{name} and %{version} macros,
-- added %setup -q parameter,
-- separated static library subpackage,
-- stated that p2c-devel requires p2c, and p2c-static requires p2c-devel,
-- added pl translation.
-
-* Tue Aug 18 1998 Cristian Gafton <gafton@redhat.com>
-- buildroot
-- binary files and man page should really be in the main package, 
-  not -devel
-
-* Tue May 05 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Thu Jul 10 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
