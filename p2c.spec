@@ -136,7 +136,7 @@ mkdir src/shlib
 
 %build
 cp src/sys.p2crc src/p2crc
-make
+%{__make}
 %{__make} shlib -C src
 
 %install
