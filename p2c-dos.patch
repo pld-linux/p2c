@@ -1,0 +1,10 @@
+--- p2c/src/lex.c.orig	Tue Nov 12 11:10:18 2002
++++ p2c/src/lex.c	Tue Nov 12 11:12:55 2002
+@@ -2827,6 +2827,7 @@
+ 
+             case '\t':
+             case ' ':
++            case 13:	/* ignore DOS 13 in Turbo files */
+             case 26:    /* ignore ^Z's in Turbo files */
+                 while (*inbufptr++ == ch) ;
+                 inbufptr--;
