@@ -13,6 +13,7 @@ Release:	12
 License:	distributable
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	78eca593810d037bf5631d934168fe0d
 Patch0:		%{name}-makefiles.patch
 Patch1:		%{name}-dos.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
