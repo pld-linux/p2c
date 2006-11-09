@@ -29,9 +29,9 @@ von Pascal-Quellcode in C-Quellcode, der dann mit einem Standard-
 C-Compiler (etwa gcc) kompiliert werden kann.
 
 %description -l es
-p2c es un traductor de Pascal para C. Se usa para convertir el
-cСdigo fuente Pascal en cСdigo fuente C, Иste puede ser compilado
-usАndose un compilador C padrСn (como gcc).
+p2c es un traductor de Pascal para C. Se usa para convertir el cСdigo
+fuente Pascal en cСdigo fuente C, Иste puede ser compilado usАndose un
+compilador C padrСn (como gcc).
 
 %description -l fr
 p2c est le systХme de traduction Pascal vers C. Il sert Ю convertir du
@@ -50,8 +50,8 @@ usando-se um compilador C padrЦo (como gcc).
 
 %description -l ru
 p2c - это транслятор из Pascal в C. Он используется для трансляции
-исходных текстов на Pascal в исходные тексты на C, которые могут
-быть откомпиллированы стандартным компиллятором C (например, gcc).
+исходных текстов на Pascal в исходные тексты на C, которые могут быть
+откомпиллированы стандартным компиллятором C (например, gcc).
 
 %description -l tr
 p2c Pascal'dan C'ye Гeviricidir. Pascal kodunu C koduna Гevirerek
@@ -74,7 +74,7 @@ Summary(ru):	Файлы для разработки p2c, транслятора из Pascal в C
 Summary(tr):	Pascal-C Гeviricisi iГin programlar ve baЧlЩk dosyalarЩ
 Summary(uk):	Файли для розробки p2c, транслятора з Pascal в C
 Group:		Development/Languages
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This is the development kit for the Pascal to C translator. It
@@ -88,8 +88,8 @@ nЭtzlich sind.
 
 %description devel -l es
 Este es el kit de desarrollo para el traductor de Pascal para C.
-Contiene los archivos de inclusiСn y algunos programas que pueden
-ser Зtiles para quien usa el traductor.
+Contiene los archivos de inclusiСn y algunos programas que pueden ser
+Зtiles para quien usa el traductor.
 
 %description devel -l fr
 Ceci est le kit de developpement pour le convertisseur Pascal vers C
@@ -113,8 +113,8 @@ para quem usa o tradutor.
 Bu paket, Pascal'dan C'ye Гevirici iГin geliЧtirme dosyalarЩnЩ iГerir.
 
 %description devel -l uk
-Пакет p2c-devel м╕стить файли, необх╕дн╕ для розробки транслятора
-з Pascal в C, p2c.
+Пакет p2c-devel м╕стить файли, необх╕дн╕ для розробки транслятора з
+Pascal в C, p2c.
 
 %package static
 Summary:	Pascal to C translator static library
@@ -123,7 +123,7 @@ Summary(pt_BR):	Bibliotecas estАticas para desenvolvimento com p2c
 Summary(ru):	Статические библиотеки для разработки p2c, транслятора из Pascal в C
 Summary(uk):	Статичн╕ б╕бл╕отеки для розробки p2c, транслятора з Pascal в C
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Pascal to C translator static library.
@@ -135,8 +135,8 @@ Biblioteka statyczna translatora Pascala na C.
 Bibliotecas estАticas para desenvolvimento com p2c.
 
 %description static -l ru
-Пакет p2c-devel содержит статические библиотеки, необходимые для разработки
-транслятора из Pascal в C, p2c.
+Пакет p2c-devel содержит статические библиотеки, необходимые для
+разработки транслятора из Pascal в C, p2c.
 
 %description static -l uk
 Пакет p2c-devel м╕стить статичн╕ б╕бл╕отеки, необх╕дн╕ для розробки
