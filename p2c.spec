@@ -1,12 +1,12 @@
 Summary:	Shared library for programs build with p2c Pascal to C convertor
-Summary(de.UTF-8):   Gemeinsam genutzte Library für Programme, die mit dem Pascal-C-Konverter p2c erstellt wurden
-Summary(es.UTF-8):   Biblioteca compartida para programas hechos con el convertidor p2c de pascal a C
-Summary(fr.UTF-8):   Librairie partagée pour les programmes construits avec le convertisseur Pascal vers C p2c
-Summary(pl.UTF-8):   Biblioteka dzielona dla programów skompilowanych po użyciu konwertera Pascala do C
-Summary(pt_BR.UTF-8):   Biblioteca compartilhada para programas feitos com o conversor p2c de pascal para C
-Summary(ru.UTF-8):   Конвертор из Pascal в C
-Summary(tr.UTF-8):   Pascal'dan C'ye çevirici için ortak kitaplıklar
-Summary(uk.UTF-8):   Конвертор з Pascal в C
+Summary(de.UTF-8):	Gemeinsam genutzte Library für Programme, die mit dem Pascal-C-Konverter p2c erstellt wurden
+Summary(es.UTF-8):	Biblioteca compartida para programas hechos con el convertidor p2c de pascal a C
+Summary(fr.UTF-8):	Librairie partagée pour les programmes construits avec le convertisseur Pascal vers C p2c
+Summary(pl.UTF-8):	Biblioteka dzielona dla programów skompilowanych po użyciu konwertera Pascala do C
+Summary(pt_BR.UTF-8):	Biblioteca compartilhada para programas feitos com o conversor p2c de pascal para C
+Summary(ru.UTF-8):	Конвертор из Pascal в C
+Summary(tr.UTF-8):	Pascal'dan C'ye çevirici için ortak kitaplıklar
+Summary(uk.UTF-8):	Конвертор з Pascal в C
 Name:		p2c
 Version:	1.22
 Release:	14
@@ -65,14 +65,14 @@ p2c - це транслятор з Pascal в C. Він використовує�
 
 %package devel
 Summary:	Programs and header for Pascal to C translator
-Summary(de.UTF-8):   Programme und Header für den Pascal-C-Übersetzer
-Summary(es.UTF-8):   Programas y archivos de inclusión para el traductor de Pascal a C
-Summary(fr.UTF-8):   Programmes et en-tête pour le convertisseur Pascal vers C
-Summary(pl.UTF-8):   Programy i pliki nagłówkowe dla translatora Pascala na C
-Summary(pt_BR.UTF-8):   Programas e arquivos de inclusão para o tradutor de Pascal para C
-Summary(ru.UTF-8):   Файлы для разработки p2c, транслятора из Pascal в C
-Summary(tr.UTF-8):   Pascal-C çeviricisi için programlar ve başlık dosyaları
-Summary(uk.UTF-8):   Файли для розробки p2c, транслятора з Pascal в C
+Summary(de.UTF-8):	Programme und Header für den Pascal-C-Übersetzer
+Summary(es.UTF-8):	Programas y archivos de inclusión para el traductor de Pascal a C
+Summary(fr.UTF-8):	Programmes et en-tête pour le convertisseur Pascal vers C
+Summary(pl.UTF-8):	Programy i pliki nagłówkowe dla translatora Pascala na C
+Summary(pt_BR.UTF-8):	Programas e arquivos de inclusão para o tradutor de Pascal para C
+Summary(ru.UTF-8):	Файлы для разработки p2c, транслятора из Pascal в C
+Summary(tr.UTF-8):	Pascal-C çeviricisi için programlar ve başlık dosyaları
+Summary(uk.UTF-8):	Файли для розробки p2c, транслятора з Pascal в C
 Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
 
@@ -118,10 +118,10 @@ Pascal в C, p2c.
 
 %package static
 Summary:	Pascal to C translator static library
-Summary(pl.UTF-8):   Biblioteka statyczna translatora Pascala na C
-Summary(pt_BR.UTF-8):   Bibliotecas estáticas para desenvolvimento com p2c
-Summary(ru.UTF-8):   Статические библиотеки для разработки p2c, транслятора из Pascal в C
-Summary(uk.UTF-8):   Статичні бібліотеки для розробки p2c, транслятора з Pascal в C
+Summary(pl.UTF-8):	Biblioteka statyczna translatora Pascala na C
+Summary(pt_BR.UTF-8):	Bibliotecas estáticas para desenvolvimento com p2c
+Summary(ru.UTF-8):	Статические библиотеки для разработки p2c, транслятора из Pascal в C
+Summary(uk.UTF-8):	Статичні бібліотеки для розробки p2c, транслятора з Pascal в C
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -144,10 +144,10 @@ Bibliotecas estáticas para desenvolvimento com p2c.
 
 %package -n basic
 Summary:	BASIC interpretor
-Summary(de.UTF-8):   BASIC-Interpreter
-Summary(fr.UTF-8):   Interpréteur BASIC
-Summary(pl.UTF-8):   Interpreter BASICa
-Summary(tr.UTF-8):   BASIC yorumlayıcısı
+Summary(de.UTF-8):	BASIC-Interpreter
+Summary(fr.UTF-8):	Interpréteur BASIC
+Summary(pl.UTF-8):	Interpreter BASICa
+Summary(tr.UTF-8):	BASIC yorumlayıcısı
 Group:		Development/Languages
 
 %description -n basic
